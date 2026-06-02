@@ -1,3 +1,20 @@
-@for (todo of todoItems(); track todo.id){
-  <p>{{ todo.title }}</p>
+<h3>Todos List</h3>
+
+@if (!todoItems().length) {
+  <p>Loading...</p>
 }
+
+<form action="">
+  <label>Filter Todos</label>
+  <input
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    placeholder="Search Todos ..."
+  />
+</form>
+
+<ul class="todos">
+  @for (todo of todoItems() | filterTodo: searchTerm(); track todo.id) {
+    <app-todo-items (todoToggled)="updateTodoItem($event)" [todo]="todo" />
+  }
+</ul>
