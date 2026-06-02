@@ -16,3 +16,6 @@ export class HomeComponent {
     console.log(`user pressed the ${event.key} key`);
   }
 }
+
+//what is KeyboardEvent ?
+//what is ${event.key} ?

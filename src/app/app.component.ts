@@ -12,13 +12,9 @@ import { HeaderComponent } from './components/header/header.component';
       <router-outlet />
     </main>
     `,
-  styles: [
-    `
-    main{
-      padding:16px;
-    }
-    `
-  ], 
+  styles: [`main{
+    padding:16px;
+    }`], 
 })
 export class AppComponent {
   title = 'first-ng-app';
